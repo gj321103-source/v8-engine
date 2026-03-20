@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DashSuite Pro — 20 Industry Dashboards</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ╔══════════════════════════════════════════════════════════╗
+   ║        DESIGN SYSTEM — DashSuite Pro v3                ║
+   ║        Inspired by Linear, Stripe, Vercel              ║
+   ╚══════════════════════════════════════════════════════════╝ */
+
+:root {
+  /* ── FOUNDATION ── */
+  --bg:          #060609;
+  --bg-2:        #0a0a0f;
+  --surface-0:   #0d0d14;
+  --surface-1:   #111118;
+  --surface-2:   #161620;
+  --surface-3:   #1c1c28;
+  --surface-4:   #222232;
+
+  /* ── BORDERS ── */
+  --border-subtle:  rgba(255,255,255,.04);
+  --border-default: rgba(255,255,255,.07);
+  --border-strong:  rgba(255,255,255,.12);
+  --border-focus:   rgba(var(--accent-rgb),.4);
+
+  /* ── TEXT ── */
+  --text-primary:   #f0f0f8;
+  --text-secondary: #8888aa;
+  --text-tertiary:  #44445a;
+  --text-inverse:   #050508;
+
+  /* ── ACCENT (Stripe-blue default, overridden per group) ── */
+  --accent:       #5865f2;
+  --accent-2:     #7c86ff;
+  --accent-soft:  rgba(88,101,242,.12);
+  --accent-glow:  rgba(88,101,242,.25);
+  --accent-rgb:   88,101,242;
+
+  /* ── SEMANTIC COLORS ── */
+  --success:  #22c55e;  --success-soft: rgba(34,197,94,.12);
+  --warning:  #f59e0b;  --warning-soft: rgba(245,158,11,.12);
+  --danger:   #ef4444;  --danger-soft:  rgba(239,68,68,.12);
+  --info:     #3b82f6;  --info-soft:    rgba(59,130,246,.12);
+
+  /* ── DATA COLORS ── */
+  --d1:#5865f2; --d2:#22c55e; --d3:#f59e0b;
+  --d4:#ef4444; --d5:#a78bfa; --d6:#ec4899; --d7:#06b6d4;
+
+  /* ── SPACING (8px grid) ── */
+  --sp-1:4px;  --sp-2:8px;  --sp-3:12px; --sp-4:16px;
+  --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px;
+
+  /* ── TYPOGRAPHY ── */
+  --font:   'Inter',system-ui,-apple-system,sans-serif;
+  --mono:   'JetBrains Mono',monospace;
+
+  /* ── RADIUS ── */
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  18px;
+  --r-2xl: 24px;
+  --r-full:9999px;
+
+  /* ── SHADOWS ── */
+  --shadow-sm:   0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:   0 4px 16px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.3);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.3);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,.7), 0 4px 16px rgba(0,0,0,.4);
+  --shadow-glow: 0 0 0 1px var(--accent-soft), 0 0 30px rgba(var(--accent-rgb),.15);
+
+  /* ── TRANSITIONS ── */
+  --t-fast:   all .12s cubic-bezier(.4,0,.2,1);
+  --t-base:   all .2s  cubic-bezier(.4,0,.2,1);
+  --t-slow:   all .35s cubic-bezier(.4,0,.2,1);
+  --t-spring: all .4s  cubic-bezier(.34,1.56,.64,1);
+
+  /* per-group vars */
+  --grp:     #5865f2;
+  --grp2:    #7c86ff;
+  --grp-rgb: 88,101,242;
+  --grp-glow:rgba(88,101,242,.25);
+}
+
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  height:100%;overflow:hidden;
+  background:var(--bg);
+  color:var(--text-primary);
+  font-family:var(--font);
+  font-size:13px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ── SCROLLBARS ── */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:var(--r-full)}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,2
